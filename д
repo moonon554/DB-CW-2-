@@ -1,0 +1,29 @@
+```mermaid
+erDiagram
+    INSPECTOR ||--o{ PERSON : "курирує"
+    PERSON ||--o{ WORKPLACE : "працює"
+    WORKPLACE ||--o{ SALARY : "нараховує"
+
+    INSPECTOR {
+        int id_ins PK
+        string name_ins
+    }
+
+    PERSON {
+        int id_per PK
+        int id_ins FK
+        string name_per
+    }
+
+    WORKPLACE {
+        int id_wrk PK
+        int id_per FK
+        string company
+    }
+
+    SALARY {
+        int id_sal PK
+        int id_wrk FK
+        decimal sum_amt
+    }
+```
